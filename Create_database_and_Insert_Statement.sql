@@ -40,7 +40,8 @@ phone varchar(25),
 active tinyint,
 store_id int,
 manager_id int,
-foreign key(store_id)references stores(store_id)
+foreign key(store_id)references stores(store_id),
+ foreign key (manager_id)references staffs(staff_id)
 );
 
 create table orders(
@@ -278,11 +279,3 @@ ORDER BY total_products;
   group by brand_id
   having total_product > 2
   order by total_product desc;
-  
- 
- 
- 
-
-
-
-
