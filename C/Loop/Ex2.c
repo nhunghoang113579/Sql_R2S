@@ -11,19 +11,16 @@ int main(){
     scanf("%d",&number1);
     printf("Input number 2:");
     scanf("%d",&number2);
-
-
- for(int i = number1; i < number2; i++){
-        if(i % 2 != 0){
-            sum += i;
-            
-            // 
-        }
-        
+for (int i = number1; i < number2; i++)
+{
+    if(i % 2 == 1){
+        sum += i;
+        continue;
     }
-    printf("%d ", sum);
-    return 0;
+}
 
-    
-   
+printf("he sum of all odd numbers : %d",sum);
+
+
+
 }

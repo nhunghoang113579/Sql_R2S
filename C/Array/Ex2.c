@@ -15,18 +15,12 @@ int main(){
     for(int i = 0; i < n; i++){
         printf("Enter element %d: ", i);
         scanf("%d",&arr[i]);
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        if(arr[i] % 2 != 0 ){
-            sum++;
+         if(arr[i] % 2 == 1){
+            sum += arr[i];
             continue;
-
         }
+        
     }
-
-    printf("Cac phan tu le cua mang %d",sum);
-
+     printf(" Tong cac phan tu le cua mang %d",sum);
 }
     

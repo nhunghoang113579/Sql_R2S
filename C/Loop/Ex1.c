@@ -2,28 +2,36 @@
 
 #include<stdio.h>
 
-int main(){
-   int maxNumber = 100;
+// int main(){
+//    int maxNumber = 100;
 
-//    do{
-//      maxNumber -= 5;
-
-//     printf("%d\n", maxNumber);
-
-//    }while (maxNumber >= 5);
-
-//     return 0;
-
-// while (maxNumber > 5)
-// {
+//    do
+//    {
 //     maxNumber -= 5;
-//    printf("%d\n", maxNumber);
+//     printf("number is : %d\n",maxNumber);
+//     /* code */
+//    } while (maxNumber > 0);
+   
+
+
+// for (int i = maxNumber ; i >= 0; i -= 5)
+// {
+//     printf("number is : %d\n",i);
 // }
 
- for(int i = 100; i >= 5; i -= 5){
-        printf("%d ", i);
-    }
 
-    return 0;
+//     return 0;
    
+// }
+
+int main(){
+    int maxNumber = 100;
+
+while (maxNumber >=5)
+{
+    maxNumber -= 5;
+    printf("Number is %d\n ",maxNumber);
 }
+}
+
+

@@ -25,20 +25,33 @@ int main() {
     // }
 
 
-    while(count < 3){
-         printf("Enter password:");
+    // while(count < 3){
+    //      printf("Enter password:");
+    //     scanf("%d",&inputPass);
+    //     if(inputPass == pass){
+    //         printf("Access granted");
+    //         break;
+    //     }else{
+    //         printf("Invalid password\n");
+
+    //     }
+    //     count++;
+
+    do{
+        printf("Enter password:");
         scanf("%d",&inputPass);
         if(inputPass == pass){
-            printf("Access granted");
+            printf("Login successful");
             break;
-        }else{
-            printf("Invalid password\n");
-
+        }else {
+            printf("Password incorrect \n");
+            count++;
         }
-        count++;
-    }
-    
+        
+    }while (count < 3);
+}
+
 
     
-}
+
 

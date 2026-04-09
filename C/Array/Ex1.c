@@ -4,7 +4,6 @@
 #include<stdio.h>
 
 int main(){
-  
     int n;
     int arr[100];
 
@@ -19,7 +18,7 @@ int main(){
     int maxNumber = arr[0];
     int minNumber = arr[0];
 
-    for (size_t i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         if(arr[i] < minNumber){
             minNumber = arr[i];

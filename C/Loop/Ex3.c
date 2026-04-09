@@ -3,21 +3,23 @@
 #include <stdio.h>
 
 int main() {
+    int a = 1, b = 1, tmp,n;
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
 
-    int a = 1;
-    int b = 1;
-    int next;
-
-    printf("%d %d ", a, b);
-
-    for(int i = 1; i <= 8; i++)
+    for (int i = 0; i <= n; i++)
     {
-        next = a + b;
-        printf("%d ", next);
+         printf("%d ", a);
+        tmp = a + b;
+        // printf("tmp１ : % d\n",tmp);
 
         a = b;
-        b = next;
+        // printf("tmp2 : % d\n",tmp);
+
+         b = tmp;
+        // printf("b : % d\n",b);
     }
 
     return 0;
+
 }

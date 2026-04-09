@@ -13,23 +13,20 @@ int main(){
 
     printf("Enter max size of array: ");
     scanf("%d",&n);
+    printf("Enter X: ");
+     scanf("%d",&x);
 
     for(int i = 0; i < n; i++){
         printf("Enter element %d: ", i);
         scanf("%d",&arr[i]);
-    }
-
-
-     printf("Enter X: ");
-     scanf("%d",&x);
-
-      for(int i = 0; i < n; i++){
-        if(arr[i] == x){
+         if(arr[i] == x){
             sum++;
         }
-        
     }
     printf("So lan X xuat hien trong mang: %d",sum);
 
+  
+    }
+    
 
-}
+
