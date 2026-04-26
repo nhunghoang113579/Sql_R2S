@@ -49,15 +49,16 @@ void outputArray(int arr[], int n){
     }
 }
 
-void sortDescending(int arr[], int n){
-    for (int i = 0; i < n - 1 ; i++)
-    {
-        for (int j = i + 1; j < n count; j++)
-        {
-            int temp = arr[i];
+void sortDescending(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] < arr[j]) { 
+                int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
+            }
         }
+    }
         
     }
     printf("Array in descending order: ");
@@ -66,15 +67,22 @@ void sortDescending(int arr[], int n){
     }
     printf("\n");
     
-}
 
-void checkAllOdd(int arr[], int n){
+
+// neu tta ca la so le thi ham tra ve 1
+// nguoc lai thi ham tra ve 0
+1 0 5 7
+int  checkAllOdd(int arr[], int n){
     for (int i = 0; i < n; i++)
     {
      if(arr[i] % 2 == 0)  {
          printf("Not all elements of the array are odd");
-         return;
+         return 0;
      }
+    }
+        return 1;
+    
+
      
     }
     
@@ -92,7 +100,7 @@ int searchValue(int arr[], int n, int x){
             continue;
         }
     }
-    printf("value %d appears %d in the array",x,count);
+    // printf("value %d appears %d in the array",x,count);
     return count;
 
 }
@@ -201,6 +209,9 @@ do
    
 }
     
+
+
+
 
 
 
