@@ -1,78 +1,93 @@
 package constroucts.lab2;
 
+import java.util.Locale;
 import java.util.Scanner;
 
     public class TraineeForm {
-        private final Scanner scanner;
-        Scanner sc = new Scanner(System.in);
+        private Scanner scanner;
+        private Trainee trainee;
 
 
         public TraineeForm(Scanner scanner) {
             this.scanner = scanner;
         }
 
-        public void TraineeForm(Scanner scanner) {
+        public String getId() {
+                return readNonEmpty("Enter ID:");
 
         }
 
-        String getId() {
-            while (true) {
-                System.out.print("Enter trainee id: ");
-                String id = scanner.nextLine().trim();
-                if (!id.isEmpty()) return id;
-                System.out.println("Id cannot be empty. Try again.");
+        public Trainee getTrainee() {
+            String name = readNonEmpty("Enter name: ");
+            String gender = readGender("Enter gender (male/female): ");
+            byte age = readAge("Enter age (>=6): ");
+            return new Trainee("TEMP", name, gender, age);
+        }
+
+//        ===========================Check Empty=====================
+
+        private String validateNonEmpty(String value) {
+            if (value == null || value.trim().isEmpty()) {
+                throw new IllegalArgumentException("Value cannot be empty");
             }
+            return value.trim();
         }
-
         private String readNonEmpty(String prompt) {
-                while (true) {
-                      System.out.print(prompt);
-                      String value = scanner.nextLine().trim();
+            while (true){
+                try{
+                    System.out.print(prompt);
+                    String input = scanner.nextLine();
+                    return validateNonEmpty(input);
 
-                    if (! value.isEmpty()) return value;
-                    System.out.println("Value cannot be empty.");
-                  }
-           }
-
-        public String readGender(){
-            while (true) {
-                    System.out.print("Enter gender: ");
-                   String  gender = sc.nextLine().trim().toLowerCase();
-                if (gender.equals("male") || gender.equals("female")) return gender;
-                     System.out.println("Gender must be 'male' or 'female'.");
-                    return gender;
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
             }
-        }
+        }//        ===========================Check Gender=====================
 
-        public Byte readtAge() {
+        private String readGender(String prompt) {
             while (true) {
                 try {
-                    System.out.print("Enter age: ");
-                    Byte age = Byte.parseByte(scanner.nextLine());
-                    if (age < 6) {
-                        throw new IllegalArgumentException("Age must be >= 6");
-                    }
-                    return age;
+                    System.out.print(prompt);
+                    String gender = validateNonEmpty(scanner.nextLine());
 
-                } catch (NumberFormatException e) {
-                    System.out.println("Age must be a number!");
-                } catch (IllegalArgumentException e) {
+                    if (gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female")) {
+                        return gender.toLowerCase();
+                    }
+
+                    throw new IllegalArgumentException("Gender must be male or female");
+
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }
         }
 
+        private Byte readAge(String prompt){
+            while (true){
+                try {
+                    System.out.print(prompt);
+                    Byte age = Byte.parseByte(scanner.nextLine());
+                    if (age < 6){
+                        throw new IllegalArgumentException("Age must be >= 6");
+                    }
+                    return age;
 
 
-            public Trainee getTrainee() {
-                String id = readNonEmpty("Enter id");
-                String name = readNonEmpty("Enter name");
-                String gender = readGender();
-                byte age = readtAge();
+                }catch (NumberFormatException e){
+                    System.out.println("Age must be a number");
 
-                return new Trainee(id, name, gender, age);
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
             }
+
+        }
+
     }
+
+
+
 
 
 

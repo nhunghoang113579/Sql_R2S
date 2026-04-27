@@ -7,7 +7,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         StudentService service = new StudentService();
         Menu menu = new Menu();
-
         while (true) {
             menu.displayMenu();
             int choice = menu.getChoice(scanner);

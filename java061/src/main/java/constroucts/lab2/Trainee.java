@@ -20,10 +20,10 @@ public class Trainee {
     }
 
     public void setId(String id) {
-        if (id == null || id.trim().isEmpty()) {
-            throw new IllegalArgumentException("Id cannot be empty");
+        if (id == null || id.trim().isEmpty()){
+         throw new IllegalArgumentException("ID not vaild");
         }
-        this.id = id.trim();
+        this.id = id;
     }
 
     public String getName() {
@@ -31,10 +31,10 @@ public class Trainee {
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new IllegalArgumentException("Name cannot be empty");
+        if (name == null || name.trim().isEmpty()){
+            throw new IllegalArgumentException("Name not empty");
         }
-        this.name = name.trim();
+        this.name = name;
     }
 
     public String getGender() {
@@ -42,15 +42,14 @@ public class Trainee {
     }
 
     public void setGender(String gender) {
-        if(gender == null){
-            throw new IllegalArgumentException("Gender cannot be null");
+        if (gender == null || gender.trim().isEmpty()){
+            throw new IllegalArgumentException("Gender not empty");
+        }
+        if(!gender.equalsIgnoreCase("male")&&!gender.equalsIgnoreCase("female")){
+            throw new IllegalArgumentException("Gender not vaild");
+        }
 
-        }
-        String normalizedGender = gender.trim().toLowerCase();
-        if(!normalizedGender.equals("male")&&!normalizedGender.equals("female")){
-            throw new IllegalArgumentException("Gender must be 'male' or 'female'");
-        }
-        this.gender = normalizedGender;
+        this.gender = gender;
     }
 
     public byte getAge() {
@@ -58,8 +57,9 @@ public class Trainee {
     }
 
     public void setAge(byte age) {
-        if(age < 6){
-            throw new IllegalArgumentException("Age must be >= 6");
+        if(age < 18){
+            throw new IllegalArgumentException("Age must be >= 18 ");
+
         }
         this.age = age;
     }
